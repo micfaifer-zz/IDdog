@@ -91,6 +91,9 @@
                                     <segment title="labrador"/>
                                 </segments>
                                 <color key="tintColor" red="0.12549019610000001" green="0.21176470589999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentedControl:" destination="vRP-7W-ntE" eventType="valueChanged" id="6tO-HM-U9q"/>
+                                </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0lM-WD-MPF">
                                 <rect key="frame" x="0.0" y="75" width="375" height="592"/>
