@@ -17,6 +17,9 @@
 		95C6456B2148029B000CB487 /* IDdogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6456A2148029B000CB487 /* IDdogTests.swift */; };
 		95C645762148029B000CB487 /* IDdogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C645752148029B000CB487 /* IDdogUITests.swift */; };
 		95D98530214AB86500A849BA /* DogFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D9852F214AB86500A849BA /* DogFeedViewController.swift */; };
+		95D98532214ABAA900A849BA /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D98531214ABAA900A849BA /* Service.swift */; };
+		95D98534214ABAEB00A849BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D98533214ABAEB00A849BA /* User.swift */; };
+		95D98536214ABB0200A849BA /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D98535214ABB0200A849BA /* SignUpResult.swift */; };
 		F3CCED8656E27E16C8EE2A61 /* Pods_IDdog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561FE63D1B7CA8EA375FFC4C /* Pods_IDdog.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		95C645752148029B000CB487 /* IDdogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDdogUITests.swift; sourceTree = "<group>"; };
 		95C645772148029B000CB487 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95D9852F214AB86500A849BA /* DogFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFeedViewController.swift; sourceTree = "<group>"; };
+		95D98531214ABAA900A849BA /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		95D98533214ABAEB00A849BA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		95D98535214ABB0200A849BA /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
 		972F1D41CFEFF2D835A688EA /* Pods_IDdogTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDdogTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA2339434BD904DE72766EC /* Pods-IDdog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDdog.debug.xcconfig"; path = "Target Support Files/Pods-IDdog/Pods-IDdog.debug.xcconfig"; sourceTree = "<group>"; };
 		DCA6F80CA132774DD6F1DDA6 /* Pods-IDdog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDdog.release.xcconfig"; path = "Target Support Files/Pods-IDdog/Pods-IDdog.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,12 +136,13 @@
 			isa = PBXGroup;
 			children = (
 				95C6455521480297000CB487 /* AppDelegate.swift */,
-				95C6455721480297000CB487 /* SignUpViewController.swift */,
-				95C6455921480297000CB487 /* Main.storyboard */,
-				95D9852F214AB86500A849BA /* DogFeedViewController.swift */,
 				95C6455C2148029A000CB487 /* Assets.xcassets */,
-				95C6455E2148029A000CB487 /* LaunchScreen.storyboard */,
 				95C645612148029A000CB487 /* Info.plist */,
+				95C6455E2148029A000CB487 /* LaunchScreen.storyboard */,
+				95D98539214ABB2700A849BA /* Controller */,
+				95D98537214ABB0D00A849BA /* Model */,
+				95D98538214ABB1D00A849BA /* Service */,
+				95D9853A214ABB4200A849BA /* View */,
 			);
 			path = IDdog;
 			sourceTree = "<group>";
@@ -156,6 +163,40 @@
 				95C645772148029B000CB487 /* Info.plist */,
 			);
 			path = IDdogUITests;
+			sourceTree = "<group>";
+		};
+		95D98537214ABB0D00A849BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95D98533214ABAEB00A849BA /* User.swift */,
+				95D98535214ABB0200A849BA /* SignUpResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95D98538214ABB1D00A849BA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				95D98531214ABAA900A849BA /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		95D98539214ABB2700A849BA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95C6455721480297000CB487 /* SignUpViewController.swift */,
+				95D9852F214AB86500A849BA /* DogFeedViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		95D9853A214ABB4200A849BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95C6455921480297000CB487 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B396AD27B6756206F7161724 /* Frameworks */ = {
@@ -379,7 +420,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				95D98530214AB86500A849BA /* DogFeedViewController.swift in Sources */,
+				95D98532214ABAA900A849BA /* Service.swift in Sources */,
 				95C6455821480297000CB487 /* SignUpViewController.swift in Sources */,
+				95D98534214ABAEB00A849BA /* User.swift in Sources */,
+				95D98536214ABB0200A849BA /* SignUpResult.swift in Sources */,
 				95C6455621480297000CB487 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
