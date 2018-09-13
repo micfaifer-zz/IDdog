@@ -84,4 +84,25 @@ extension DogFeedViewController: UICollectionViewDelegate, UICollectionViewDataS
         cell.dogImageView.kf.setImage(with: URL(string: dogImage))
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if dogsData[selectedCategory] != nil {
+            let cell = self.dogFeedCollectionView.cellForItem(at: indexPath) as! DogCollectionViewCell
+            let imageView = UIImageView(image: cell.dogImageView.image)
+            imageView.frame = UIScreen.main.bounds
+            imageView.backgroundColor = .black
+            imageView.contentMode = .top
+            imageView.contentMode = .scaleAspectFit
+            imageView.isUserInteractionEnabled = true
+
+            let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+            imageView.addGestureRecognizer(tap)
+
+            self.view.addSubview(imageView)
+        }
+    }
+
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
+    }
 }
