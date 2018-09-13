@@ -9,6 +9,7 @@
 import UIKit
 
 class DogFeedViewController: UIViewController {
+    var user: User?
 
     // MARK: - Outlets
 
@@ -16,5 +17,6 @@ class DogFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(user?.token ?? "")
     }
 }

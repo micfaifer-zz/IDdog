@@ -52,6 +52,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yFd-y1-Www" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0kK-hi-T4q"/>
                             <constraint firstItem="yFd-y1-Www" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="30Z-tb-PSS"/>
@@ -61,14 +62,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <toolbarItems/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailTextField" destination="hxv-ep-1jz" id="79k-hX-kEa"/>
+                        <segue destination="vRP-7W-ntE" kind="show" identifier="dogFeedSegue" id="prm-eD-WI3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-89" y="134"/>
         </scene>
         <!--Dog Feed View Controller-->
         <scene sceneID="4I4-7O-Lue">
@@ -101,7 +102,7 @@
                                     <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dogCell" id="qqE-CT-k8W">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dogCell" id="qqE-CT-k8W" customClass="DogCollectionViewCell" customModule="IDdog" customModuleProvider="target">
                                         <rect key="frame" x="10" y="0.0" width="129" height="117"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -119,6 +120,9 @@
                                             <constraint firstAttribute="trailing" secondItem="K69-du-aax" secondAttribute="trailing" id="ncg-5D-Khe"/>
                                             <constraint firstAttribute="bottom" secondItem="K69-du-aax" secondAttribute="bottom" id="ntL-z1-6QY"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="dogImageView" destination="K69-du-aax" id="BuG-Wu-t1R"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -141,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ch3-8o-Xpi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925.60000000000002" y="133.5832083958021"/>
+            <point key="canvasLocation" x="613" y="134"/>
         </scene>
     </scenes>
 </document>

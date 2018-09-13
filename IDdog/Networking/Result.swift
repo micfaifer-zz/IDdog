@@ -1,5 +1,5 @@
 //
-//  Service.swift
+//  Result.swift
 //  IDdog
 //
 //  Created by lugia on 13/09/18.
@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum Result<T, U> where U: Error  {
+    case success(T)
+    case failure(U)
+}
