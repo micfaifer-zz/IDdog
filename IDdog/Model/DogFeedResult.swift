@@ -10,7 +10,11 @@ import Foundation
 
 import Foundation
 
+enum DogCategory: String, Codable {
+    case husky, hound, pug, labrador
+}
+
 struct DogFeedResult: Codable {
-    let category: String
+    let category: DogCategory
     let list: [String]
 }

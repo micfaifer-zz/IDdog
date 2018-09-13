@@ -11,12 +11,21 @@ import UIKit
 class DogFeedViewController: UIViewController {
     var user: User?
 
+    let dogFeedService = DogFeedService()
+
     // MARK: - Outlets
 
     @IBOutlet weak var dogFeedCollectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(user?.token ?? "")
+
+        if let user = user {
+            dogFeedService.fetchDogs(userKey: user.token) { (result) in
+                DispatchQueue.main.async {
+                    print(result)
+                }
+            }
+        }
     }
 }
