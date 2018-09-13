@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A24E8F2D314F0ADE5D089D1 /* Pods_IDdogTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972F1D41CFEFF2D835A688EA /* Pods_IDdogTests.framework */; };
 		7EA51A3AD7D12BF0FB21A828 /* Pods_IDdogUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BADF29B8277DA336644D675 /* Pods_IDdogUITests.framework */; };
+		9507F8BE214AFC9000AD6BBA /* DogFeedResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9507F8BD214AFC9000AD6BBA /* DogFeedResult.swift */; };
 		95C6455621480297000CB487 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6455521480297000CB487 /* AppDelegate.swift */; };
 		95C6455821480297000CB487 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C6455721480297000CB487 /* SignUpViewController.swift */; };
 		95C6455B21480297000CB487 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95C6455921480297000CB487 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		561FE63D1B7CA8EA375FFC4C /* Pods_IDdog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDdog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BADF29B8277DA336644D675 /* Pods_IDdogUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDdogUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74189BC9C7A8CDB1214F22E6 /* Pods-IDdogUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDdogUITests.release.xcconfig"; path = "Target Support Files/Pods-IDdogUITests/Pods-IDdogUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9507F8BD214AFC9000AD6BBA /* DogFeedResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogFeedResult.swift; sourceTree = "<group>"; };
 		95C6455221480297000CB487 /* IDdog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDdog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C6455521480297000CB487 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95C6455721480297000CB487 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				95D98533214ABAEB00A849BA /* User.swift */,
 				95D98535214ABB0200A849BA /* SignUpResult.swift */,
+				9507F8BD214AFC9000AD6BBA /* DogFeedResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				95C6455821480297000CB487 /* SignUpViewController.swift in Sources */,
 				95D98549214ACD0900A849BA /* Extensions.swift in Sources */,
 				95D98534214ABAEB00A849BA /* User.swift in Sources */,
+				9507F8BE214AFC9000AD6BBA /* DogFeedResult.swift in Sources */,
 				95D9853F214AC2D400A849BA /* SignUpService.swift in Sources */,
 				95D98536214ABB0200A849BA /* SignUpResult.swift in Sources */,
 				95C6455621480297000CB487 /* AppDelegate.swift in Sources */,
