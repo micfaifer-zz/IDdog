@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,17 +15,18 @@
         <!--Sign Up View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignUpViewController" customModule="IDdog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="BYZ-38-t0r" customClass="SignUpViewController" customModule="IDdog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="yFd-y1-Www">
-                                <rect key="frame" x="40" y="283.5" width="295" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yFd-y1-Www">
+                                <rect key="frame" x="40" y="363.66666666666669" width="295" height="85"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite um email válido" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-ep-1jz">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="40"/>
                                         <color key="backgroundColor" red="0.98648394016697583" green="0.98648394016697583" blue="0.98648394016697583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="dW9-k7-dve"/>
                                         </constraints>
@@ -32,11 +35,12 @@
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="send" textContentType="email"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHG-tA-MSn">
-                                        <rect key="frame" x="0.0" y="60" width="295" height="40"/>
-                                        <color key="backgroundColor" red="0.12549019610000001" green="0.21176470589999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="45" width="295" height="40"/>
+                                        <color key="backgroundColor" name="ThemeColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="GIo-oh-rva"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -51,12 +55,22 @@
                                     <constraint firstItem="xHG-tA-MSn" firstAttribute="centerX" secondItem="yFd-y1-Www" secondAttribute="centerX" id="fXH-b2-ms5"/>
                                 </constraints>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="oja-Gw-rsX">
+                                <rect key="frame" x="104" y="209" width="166" height="134"/>
+                                <color key="tintColor" name="ThemeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134" id="Xba-TB-WjP"/>
+                                    <constraint firstAttribute="width" secondItem="oja-Gw-rsX" secondAttribute="height" multiplier="83:67" id="tBA-po-XNi"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="yFd-y1-Www" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0kK-hi-T4q"/>
                             <constraint firstItem="yFd-y1-Www" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="30Z-tb-PSS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yFd-y1-Www" secondAttribute="trailing" constant="40" id="PDw-zM-Ccj"/>
+                            <constraint firstItem="yFd-y1-Www" firstAttribute="top" secondItem="oja-Gw-rsX" secondAttribute="bottom" constant="20" id="ej0-cn-VmZ"/>
+                            <constraint firstItem="oja-Gw-rsX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="obk-Jl-1qU"/>
                             <constraint firstItem="yFd-y1-Www" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="u0B-4I-GEH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -64,25 +78,25 @@
                     <toolbarItems/>
                     <connections>
                         <outlet property="emailTextField" destination="hxv-ep-1jz" id="79k-hX-kEa"/>
-                        <segue destination="vRP-7W-ntE" kind="show" identifier="dogFeedSegue" id="prm-eD-WI3"/>
+                        <segue destination="OPF-gR-ebI" kind="show" identifier="dogFeedSegue" id="prm-eD-WI3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-89" y="134"/>
+            <point key="canvasLocation" x="37.600000000000001" y="132.26600985221674"/>
         </scene>
-        <!--Dog Feed View Controller-->
+        <!--ID Dogs -->
         <scene sceneID="4I4-7O-Lue">
             <objects>
                 <viewController id="vRP-7W-ntE" customClass="DogFeedViewController" customModule="IDdog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x36-vr-F2y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="i0h-xG-l9G">
-                                <rect key="frame" x="0.0" y="20" width="375" height="36"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="41"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="QQ7-rd-jqT"/>
+                                    <constraint firstAttribute="height" constant="40" id="QQ7-rd-jqT"/>
                                 </constraints>
                                 <segments>
                                     <segment title="husky"/>
@@ -90,29 +104,29 @@
                                     <segment title="pug"/>
                                     <segment title="labrador"/>
                                 </segments>
-                                <color key="tintColor" red="0.12549019610000001" green="0.21176470589999999" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" name="ThemeColor"/>
                                 <connections>
                                     <action selector="segmentedControl:" destination="vRP-7W-ntE" eventType="valueChanged" id="6tO-HM-U9q"/>
                                 </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0lM-WD-MPF">
-                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                                <rect key="frame" x="10" y="148" width="355" height="630"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bYR-Me-qWC">
                                     <size key="itemSize" width="129" height="117"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dogCell" id="qqE-CT-k8W" customClass="DogCollectionViewCell" customModule="IDdog" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="129" height="117"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="117"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="129" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K69-du-aax">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K69-du-aax">
                                                     <rect key="frame" x="0.0" y="0.0" width="129" height="117"/>
                                                 </imageView>
                                             </subviews>
@@ -132,23 +146,59 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YcT-ql-V4J" firstAttribute="trailing" secondItem="0lM-WD-MPF" secondAttribute="trailing" id="46w-zD-667"/>
+                            <constraint firstItem="YcT-ql-V4J" firstAttribute="trailing" secondItem="0lM-WD-MPF" secondAttribute="trailing" constant="10" id="46w-zD-667"/>
                             <constraint firstItem="0lM-WD-MPF" firstAttribute="top" secondItem="i0h-xG-l9G" secondAttribute="bottom" constant="20" id="5gF-W7-QC1"/>
                             <constraint firstItem="YcT-ql-V4J" firstAttribute="trailing" secondItem="i0h-xG-l9G" secondAttribute="trailing" id="K5c-Qj-hta"/>
                             <constraint firstItem="YcT-ql-V4J" firstAttribute="bottom" secondItem="0lM-WD-MPF" secondAttribute="bottom" id="L9c-0n-lfo"/>
-                            <constraint firstItem="0lM-WD-MPF" firstAttribute="leading" secondItem="YcT-ql-V4J" secondAttribute="leading" id="cJZ-bv-pLa"/>
+                            <constraint firstItem="0lM-WD-MPF" firstAttribute="leading" secondItem="YcT-ql-V4J" secondAttribute="leading" constant="10" id="cJZ-bv-pLa"/>
                             <constraint firstItem="i0h-xG-l9G" firstAttribute="top" secondItem="YcT-ql-V4J" secondAttribute="top" id="caR-G9-i1d"/>
                             <constraint firstItem="i0h-xG-l9G" firstAttribute="leading" secondItem="YcT-ql-V4J" secondAttribute="leading" id="meZ-EW-dlf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YcT-ql-V4J"/>
                     </view>
+                    <navigationItem key="navigationItem" title="ID Dogs " id="h95-2R-RpO">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="kb2-n6-j3W">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="logOut:" destination="vRP-7W-ntE" id="ZDB-uk-GFJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dogFeedCollectionView" destination="0lM-WD-MPF" id="Gwd-Om-6WI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ch3-8o-Xpi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="613" y="134"/>
+            <point key="canvasLocation" x="1591" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lfJ-li-uOf">
+            <objects>
+                <navigationController storyboardIdentifier="dogfeed" automaticallyAdjustsScrollViewInsets="NO" id="OPF-gR-ebI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vbJ-JW-eTO">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" name="ThemeColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vRP-7W-ntE" kind="relationship" relationship="rootViewController" id="JY4-HD-bVy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3le-uc-b4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="804" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dog" width="700" height="700"/>
+        <namedColor name="ThemeColor">
+            <color red="0.43500000238418579" green="0.36100000143051147" blue="0.57599997520446777" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

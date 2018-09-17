@@ -22,7 +22,6 @@ class DogFeedViewController: UIViewController {
     var selectedCategory = DogCategory.husky
 
     // MARK: - Outlets
-
     @IBOutlet weak var dogFeedCollectionView: UICollectionView!
 
     @IBAction func segmentedControl(_ sender: UISegmentedControl) {
@@ -41,11 +40,24 @@ class DogFeedViewController: UIViewController {
         loadDogs(dogCategory: selectedCategory)
     }
 
+    @IBAction func logOut(_ sender: Any) {
+        UserDefaultsManager.shared.userToken = nil
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let signupViewController = storyBoard.instantiateViewController(withIdentifier: "login")
+        self.present(signupViewController, animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.dogFeedCollectionView.delegate = self
         self.dogFeedCollectionView.dataSource = self
+
+        if user == nil  {
+            if let userToken = UserDefaultsManager.shared.userToken{
+                self.user = User(token: userToken)
+            }
+        }
 
         loadDogs(dogCategory: selectedCategory)
     }
@@ -104,5 +116,12 @@ extension DogFeedViewController: UICollectionViewDelegate, UICollectionViewDataS
 
     @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
         sender.view?.removeFromSuperview()
+    }
+}
+
+extension DogFeedViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let dogCellSize = (dogFeedCollectionView.frame.width/3) - 10
+        return CGSize(width: dogCellSize, height: dogCellSize)
     }
 }

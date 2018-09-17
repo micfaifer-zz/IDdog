@@ -18,6 +18,7 @@ class DogFeedService {
             guard let url = urlComponents.url else { return }
             var request = URLRequest(url: url)
             request.addValue(userKey, forHTTPHeaderField: "Authorization")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
             URLSession.shared.dataTask(with: request) { (data, response, error) in
                 if let error = error, error._code == NSURLErrorNotConnectedToInternet  {

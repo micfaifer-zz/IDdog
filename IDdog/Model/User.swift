@@ -9,12 +9,21 @@
 import Foundation
 
 struct User: Codable {
-    let id, token, createdAt, updatedAt: String
-    let v: Int
+    let token: String
+    let id, createdAt, updatedAt: String?
+    let v: Int?
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case token, createdAt, updatedAt
         case v = "__v"
+    }
+
+    init(token: String, id: String? = nil, createdAt: String? = nil, updatedAt: String? = nil, v: Int? = nil) {
+        self.token = token
+        self.id = id
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+        self.v = v
     }
 }

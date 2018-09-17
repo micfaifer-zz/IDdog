@@ -17,19 +17,22 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
 
     @IBAction func signUp(_ sender: UIButton) {
-        if emailTextField.text == "" {
+        guard let email = emailTextField.text?.trimmingCharacters(in: .whitespaces) else {
             self.alert(message: "Preencha o campo de email")
-        } else if let email = emailTextField.text {
-            signUpService.signUp(emailAddress: email) { (result) in
-                DispatchQueue.main.async {
-                    switch result {
-                    case .success(let signUpResult):
-                        //go to feed view controller
-                        self.performSegue(withIdentifier: self.dogFeedSegueIdentifier, sender: signUpResult.user)
-                        print(signUpResult)
-                    case .failure(let error):
-                        self.alert(message: error.localizedDescription)
-                    }
+            return
+        }
+
+
+        signUpService.signUp(emailAddress: email) { (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let signUpResult):
+                    //go to feed view controller and save token in user defaults
+                    UserDefaultsManager.shared.userToken = signUpResult.user.token
+                    self.performSegue(withIdentifier: self.dogFeedSegueIdentifier, sender: signUpResult.user)
+                    print(signUpResult)
+                case .failure(let error):
+                    self.alert(message: error.localizedDescription)
                 }
             }
         }
@@ -37,6 +40,7 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.emailTextField.delegate = self
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -48,3 +52,8 @@ class SignUpViewController: UIViewController {
     }
 }
 
+extension SignUpViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
+}
